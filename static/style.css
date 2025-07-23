@@ -1,0 +1,162 @@
+/* Base styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    animation: fadeUp 0.6s ease;
+}
+
+/* Inputs */
+input[type="text"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    font-size: 16px;
+    transition: 0.3s;
+    background-color: #f9fafb;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+/* Button */
+button {
+    padding: 10px 15px;
+    background-color: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+    background-color: #3730a3;
+    transform: scale(1.05);
+}
+
+/* ToDo Card */
+.todo {
+    background-color: #f9fafb;
+    border-left: 4px solid #4f46e5;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.6s ease;
+}
+
+.todo h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #1a202c;
+}
+
+.todo p {
+    margin: 5px 0 10px;
+    color: #4a5568;
+}
+
+.todo form {
+    margin: 0;
+}
+
+/* API Links */
+.api-links {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px dashed #e2e8f0;
+}
+
+.api-links h3 {
+    color: #1a202c;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-left: 4px solid #4f46e5;
+    padding-left: 10px;
+}
+
+.api-link-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.api-link-card:hover {
+    transform: scale(1.02);
+    background: #edf2f7;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.1);
+}
+
+.api-link-card a {
+    color: #4f46e5;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.api-link-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}

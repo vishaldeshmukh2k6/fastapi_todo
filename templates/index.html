@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> My ToDo List</h1>
+
+        <!-- Add Form -->
+        <form method="post" action="/add">
+            <input type="text" name="title" placeholder="Enter task title..." required>
+            <input type="text" name="description" placeholder="Enter task description..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Show ToDos -->
+        {% for todo in todos %}
+            <div class="todo">
+                <h3>{{ todo.title }}</h3>
+                <p>{{ todo.description }}</p>
+                <form method="post" action="/delete/{{ todo.id }}">
+                    <button type="submit"> Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+
+        <!-- API Links -->
+        <div class="api-links">
+                <div class="api-links">
+                    <h3>API Endpoints</h3>
+                    <div class="api-link-card">
+                        <a href="/tasks">GET /tasks</a>
+                    </div>
+                    <div class="api-link-card">
+                        <a href="/task/1">GET /task/&lt;id&gt;</a>
+                    </div>
+                    <div class="api-link-card">
+                        <a href="/create-task">POST /create-task</a>
+                    </div>
+                    <div class="api-link-card">
+                        <a href="/update-task/1">PUT /update-task/&lt;id&gt;</a>
+                    </div>
+                    <div class="api-link-card">
+                        <a href="/delete-task/1">DELETE /delete-task/&lt;id&gt;</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

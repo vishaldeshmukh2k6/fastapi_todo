@@ -7,12 +7,10 @@ from database import Base, engine, SessionLocal
 from models import ToDo
 from pydantic import BaseModel
 from starlette.status import HTTP_303_SEE_OTHER
-from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 Base.metadata.create_all(bind=engine)
 
